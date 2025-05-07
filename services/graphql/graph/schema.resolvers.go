@@ -22,7 +22,15 @@ func (r *mutationResolver) CreateQuestion(ctx context.Context, input model.NewQu
 
 // CreateUser is the resolver for the createUser field.
 func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (*model.User, error) {
-	panic(fmt.Errorf("not implemented: CreateUser - createUser"))
+	user := &model.User{
+		Username:  input.Username,
+		Email:     input.Email,
+		FirstName: input.FirstName,
+		LastName:  input.LastName,
+	}
+
+	r.users = append(r.users, user)
+	return user, nil
 }
 
 // Quizes is the resolver for the quizes field.
@@ -37,8 +45,7 @@ func (r *queryResolver) Questions(ctx context.Context) ([]*model.Question, error
 
 // Users is the resolver for the users field.
 func (r *queryResolver) Users(ctx context.Context) ([]*model.User, error) {
-
-	panic(fmt.Errorf("not implemented: Users - users"))
+	return r.users, nil
 }
 
 // Options is the resolver for the options field.
@@ -58,3 +65,5 @@ func (r *Resolver) Question() QuestionResolver { return &questionResolver{r} }
 type mutationResolver struct{ *Resolver }
 type queryResolver struct{ *Resolver }
 type questionResolver struct{ *Resolver }
+
+// Resolver is the root struct that holds shared data.
