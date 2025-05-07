@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  auth:
+  game:
+  account:
+  quiz:
+  gateway:
+  auth_db:
+  player_db:
+  quiz_db:
