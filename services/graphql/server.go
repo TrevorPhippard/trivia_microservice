@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"trivia/graph"
+	"trivia/services/graphql/graph"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/handler/extension"

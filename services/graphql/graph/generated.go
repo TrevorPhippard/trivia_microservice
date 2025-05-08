@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"sync"
 	"sync/atomic"
-	"trivia/graph/model"
+	"trivia/services/graphql/graph/model"
 
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/introspection"
@@ -415,7 +415,7 @@ func (ec *executionContext) field_Mutation_createQuestion_argsInput(
 ) (model.NewQuestion, error) {
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
 	if tmp, ok := rawArgs["input"]; ok {
-		return ec.unmarshalNNewQuestion2triviaᚋgraphᚋmodelᚐNewQuestion(ctx, tmp)
+		return ec.unmarshalNNewQuestion2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐNewQuestion(ctx, tmp)
 	}
 
 	var zeroVal model.NewQuestion
@@ -438,7 +438,7 @@ func (ec *executionContext) field_Mutation_createQuiz_argsInput(
 ) (model.NewQuiz, error) {
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
 	if tmp, ok := rawArgs["input"]; ok {
-		return ec.unmarshalNNewQuiz2triviaᚋgraphᚋmodelᚐNewQuiz(ctx, tmp)
+		return ec.unmarshalNNewQuiz2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐNewQuiz(ctx, tmp)
 	}
 
 	var zeroVal model.NewQuiz
@@ -461,7 +461,7 @@ func (ec *executionContext) field_Mutation_createUser_argsInput(
 ) (model.NewUser, error) {
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
 	if tmp, ok := rawArgs["input"]; ok {
-		return ec.unmarshalNNewUser2triviaᚋgraphᚋmodelᚐNewUser(ctx, tmp)
+		return ec.unmarshalNNewUser2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐNewUser(ctx, tmp)
 	}
 
 	var zeroVal model.NewUser
@@ -619,7 +619,7 @@ func (ec *executionContext) _Mutation_createQuiz(ctx context.Context, field grap
 	}
 	res := resTmp.(*model.Quiz)
 	fc.Result = res
-	return ec.marshalNQuiz2ᚖtriviaᚋgraphᚋmodelᚐQuiz(ctx, field.Selections, res)
+	return ec.marshalNQuiz2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuiz(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_createQuiz(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -684,7 +684,7 @@ func (ec *executionContext) _Mutation_createQuestion(ctx context.Context, field 
 	}
 	res := resTmp.(*model.Question)
 	fc.Result = res
-	return ec.marshalNQuestion2ᚖtriviaᚋgraphᚋmodelᚐQuestion(ctx, field.Selections, res)
+	return ec.marshalNQuestion2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestion(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_createQuestion(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -751,7 +751,7 @@ func (ec *executionContext) _Mutation_createUser(ctx context.Context, field grap
 	}
 	res := resTmp.(*model.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚖtriviaᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_createUser(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -818,7 +818,7 @@ func (ec *executionContext) _Query_quizes(ctx context.Context, field graphql.Col
 	}
 	res := resTmp.([]*model.Quiz)
 	fc.Result = res
-	return ec.marshalNQuiz2ᚕᚖtriviaᚋgraphᚋmodelᚐQuizᚄ(ctx, field.Selections, res)
+	return ec.marshalNQuiz2ᚕᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuizᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_quizes(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -872,7 +872,7 @@ func (ec *executionContext) _Query_questions(ctx context.Context, field graphql.
 	}
 	res := resTmp.([]*model.Question)
 	fc.Result = res
-	return ec.marshalNQuestion2ᚕᚖtriviaᚋgraphᚋmodelᚐQuestionᚄ(ctx, field.Selections, res)
+	return ec.marshalNQuestion2ᚕᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestionᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_questions(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -928,7 +928,7 @@ func (ec *executionContext) _Query_users(ctx context.Context, field graphql.Coll
 	}
 	res := resTmp.([]*model.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚕᚖtriviaᚋgraphᚋmodelᚐUserᚄ(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚕᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐUserᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_users(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1467,7 +1467,7 @@ func (ec *executionContext) _Quiz_questions(ctx context.Context, field graphql.C
 	}
 	res := resTmp.([]model.Question)
 	fc.Result = res
-	return ec.marshalNQuestion2ᚕtriviaᚋgraphᚋmodelᚐQuestionᚄ(ctx, field.Selections, res)
+	return ec.marshalNQuestion2ᚕtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestionᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Quiz_questions(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4553,26 +4553,26 @@ func (ec *executionContext) marshalNID2string(ctx context.Context, sel ast.Selec
 	return res
 }
 
-func (ec *executionContext) unmarshalNNewQuestion2triviaᚋgraphᚋmodelᚐNewQuestion(ctx context.Context, v any) (model.NewQuestion, error) {
+func (ec *executionContext) unmarshalNNewQuestion2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐNewQuestion(ctx context.Context, v any) (model.NewQuestion, error) {
 	res, err := ec.unmarshalInputNewQuestion(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalNNewQuiz2triviaᚋgraphᚋmodelᚐNewQuiz(ctx context.Context, v any) (model.NewQuiz, error) {
+func (ec *executionContext) unmarshalNNewQuiz2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐNewQuiz(ctx context.Context, v any) (model.NewQuiz, error) {
 	res, err := ec.unmarshalInputNewQuiz(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalNNewUser2triviaᚋgraphᚋmodelᚐNewUser(ctx context.Context, v any) (model.NewUser, error) {
+func (ec *executionContext) unmarshalNNewUser2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐNewUser(ctx context.Context, v any) (model.NewUser, error) {
 	res, err := ec.unmarshalInputNewUser(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNQuestion2triviaᚋgraphᚋmodelᚐQuestion(ctx context.Context, sel ast.SelectionSet, v model.Question) graphql.Marshaler {
+func (ec *executionContext) marshalNQuestion2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestion(ctx context.Context, sel ast.SelectionSet, v model.Question) graphql.Marshaler {
 	return ec._Question(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNQuestion2ᚕtriviaᚋgraphᚋmodelᚐQuestionᚄ(ctx context.Context, sel ast.SelectionSet, v []model.Question) graphql.Marshaler {
+func (ec *executionContext) marshalNQuestion2ᚕtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestionᚄ(ctx context.Context, sel ast.SelectionSet, v []model.Question) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -4596,7 +4596,7 @@ func (ec *executionContext) marshalNQuestion2ᚕtriviaᚋgraphᚋmodelᚐQuestio
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNQuestion2triviaᚋgraphᚋmodelᚐQuestion(ctx, sel, v[i])
+			ret[i] = ec.marshalNQuestion2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestion(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -4616,7 +4616,7 @@ func (ec *executionContext) marshalNQuestion2ᚕtriviaᚋgraphᚋmodelᚐQuestio
 	return ret
 }
 
-func (ec *executionContext) marshalNQuestion2ᚕᚖtriviaᚋgraphᚋmodelᚐQuestionᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Question) graphql.Marshaler {
+func (ec *executionContext) marshalNQuestion2ᚕᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestionᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Question) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -4640,7 +4640,7 @@ func (ec *executionContext) marshalNQuestion2ᚕᚖtriviaᚋgraphᚋmodelᚐQues
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNQuestion2ᚖtriviaᚋgraphᚋmodelᚐQuestion(ctx, sel, v[i])
+			ret[i] = ec.marshalNQuestion2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestion(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -4660,7 +4660,7 @@ func (ec *executionContext) marshalNQuestion2ᚕᚖtriviaᚋgraphᚋmodelᚐQues
 	return ret
 }
 
-func (ec *executionContext) marshalNQuestion2ᚖtriviaᚋgraphᚋmodelᚐQuestion(ctx context.Context, sel ast.SelectionSet, v *model.Question) graphql.Marshaler {
+func (ec *executionContext) marshalNQuestion2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuestion(ctx context.Context, sel ast.SelectionSet, v *model.Question) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -4670,11 +4670,11 @@ func (ec *executionContext) marshalNQuestion2ᚖtriviaᚋgraphᚋmodelᚐQuestio
 	return ec._Question(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNQuiz2triviaᚋgraphᚋmodelᚐQuiz(ctx context.Context, sel ast.SelectionSet, v model.Quiz) graphql.Marshaler {
+func (ec *executionContext) marshalNQuiz2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuiz(ctx context.Context, sel ast.SelectionSet, v model.Quiz) graphql.Marshaler {
 	return ec._Quiz(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNQuiz2ᚕᚖtriviaᚋgraphᚋmodelᚐQuizᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Quiz) graphql.Marshaler {
+func (ec *executionContext) marshalNQuiz2ᚕᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuizᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Quiz) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -4698,7 +4698,7 @@ func (ec *executionContext) marshalNQuiz2ᚕᚖtriviaᚋgraphᚋmodelᚐQuizᚄ(
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNQuiz2ᚖtriviaᚋgraphᚋmodelᚐQuiz(ctx, sel, v[i])
+			ret[i] = ec.marshalNQuiz2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuiz(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -4718,7 +4718,7 @@ func (ec *executionContext) marshalNQuiz2ᚕᚖtriviaᚋgraphᚋmodelᚐQuizᚄ(
 	return ret
 }
 
-func (ec *executionContext) marshalNQuiz2ᚖtriviaᚋgraphᚋmodelᚐQuiz(ctx context.Context, sel ast.SelectionSet, v *model.Quiz) graphql.Marshaler {
+func (ec *executionContext) marshalNQuiz2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐQuiz(ctx context.Context, sel ast.SelectionSet, v *model.Quiz) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -4774,11 +4774,11 @@ func (ec *executionContext) marshalNString2ᚕstringᚄ(ctx context.Context, sel
 	return ret
 }
 
-func (ec *executionContext) marshalNUser2triviaᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2triviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
 	return ec._User(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNUser2ᚕᚖtriviaᚋgraphᚋmodelᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚕᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.User) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -4802,7 +4802,7 @@ func (ec *executionContext) marshalNUser2ᚕᚖtriviaᚋgraphᚋmodelᚐUserᚄ(
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNUser2ᚖtriviaᚋgraphᚋmodelᚐUser(ctx, sel, v[i])
+			ret[i] = ec.marshalNUser2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐUser(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -4822,7 +4822,7 @@ func (ec *executionContext) marshalNUser2ᚕᚖtriviaᚋgraphᚋmodelᚐUserᚄ(
 	return ret
 }
 
-func (ec *executionContext) marshalNUser2ᚖtriviaᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚖtriviaᚋservicesᚋgraphqlᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")

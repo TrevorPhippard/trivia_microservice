@@ -7,7 +7,7 @@ package graph
 import (
 	"context"
 	"fmt"
-	"trivia/graph/model"
+	"trivia/services/graphql/graph/model"
 )
 
 // CreateQuiz is the resolver for the createQuiz field.
@@ -65,5 +65,3 @@ func (r *Resolver) Question() QuestionResolver { return &questionResolver{r} }
 type mutationResolver struct{ *Resolver }
 type queryResolver struct{ *Resolver }
 type questionResolver struct{ *Resolver }
-
-// Resolver is the root struct that holds shared data.

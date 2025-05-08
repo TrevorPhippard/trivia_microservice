@@ -1,6 +1,6 @@
 package graph
 
-import "trivia/graph/model"
+import "trivia/services/graphql/graph/model"
 
 // This file will not be regenerated automatically.
 //
